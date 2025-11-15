@@ -1,0 +1,66 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #e6f2ff;
+  color: #333;
+}
+
+header {
+  background-color: #0055aa;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background-image: url('images/medical-team.jpg'); /* Replace with your own image */
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  color: white;
+  text-align: center;
+}
+
+section {
+  padding: 40px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+footer {
+  background-color: #0055aa;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
