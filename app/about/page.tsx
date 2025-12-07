@@ -11,12 +11,12 @@ export default function About() {
     <div className="section-padding">
       <div className="container-custom">
         {/* Meet Victorious Medical Section */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-primary-700 mb-8 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-bold text-primary-700 mb-4 text-center">
             Meet Victorious Medical
           </h1>
           
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+          <div className="bg-white rounded-lg shadow-lg p-8 mb-4">
             <div className="mb-6">
               <Image
                 src="/images/about-image.jpg"
@@ -42,7 +42,7 @@ export default function About() {
         </div>
 
         {/* Team Image Section */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-4xl mx-auto mb-4">
           <div className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
             <Image
               src="/images/contact-image.jpg"
@@ -54,15 +54,15 @@ export default function About() {
         </div>
 
         {/* Personalized Support Section */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-6 text-center">
+        <div className="max-w-4xl mx-auto mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-4 text-center">
             Personalized support designed for you
           </h2>
         </div>
 
         {/* Why Choose Victorious Medical Section */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-6 text-center">
+        <div className="max-w-4xl mx-auto mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-4 text-center">
             Why Choose Victorious Medical?
           </h2>
           <div className="bg-white rounded-lg shadow-lg p-8">
@@ -74,7 +74,7 @@ export default function About() {
 
         {/* Benefits Section - In Circles */}
         <div className="max-w-6xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-6 text-center">
             Benefits of Working with Victorious Medical
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -142,7 +142,7 @@ export default function About() {
 
         {/* Reviews Section */}
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-4 text-center">
             What Our Customers Say
           </h2>
           <div className="bg-white rounded-lg shadow-lg p-8">

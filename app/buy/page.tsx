@@ -76,7 +76,7 @@ function BuyContent() {
           <h1 className="text-4xl sm:text-5xl font-bold text-primary-700 mb-4 text-center">
             Buy Supplies
           </h1>
-          <p className="text-xl text-gray-600 text-center mb-12">
+          <p className="text-xl text-gray-600 text-center mb-6">
             Browse and purchase diabetic supplies securely
           </p>
 
@@ -224,7 +224,7 @@ function BuyContent() {
 
         {/* Payment Section */}
         {showPayment && (
-          <div id="payment-section" className="max-w-4xl mx-auto mt-12">
+          <div id="payment-section" className="max-w-4xl mx-auto mt-6">
             <PaymentSection amount="150.00" />
           </div>
         )}

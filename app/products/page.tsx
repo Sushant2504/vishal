@@ -19,7 +19,6 @@ const products = [
 
 export default function Products() {
   const router = useRouter()
-  const [selectedOption, setSelectedOption] = useState<'buy' | 'sell' | null>(null)
 
   useEffect(() => {
     // Add scroll animations
@@ -45,79 +44,23 @@ export default function Products() {
   const handleProductClick = (productId: number, productName: string) => {
     // Store selected product in sessionStorage
     sessionStorage.setItem('selectedProduct', JSON.stringify({ id: productId, name: productName }))
+    sessionStorage.setItem('showShipping', 'true')
     
-    // Redirect directly to payment page
-    router.push(`/products/payment?product=${productId}`)
+    // Redirect to sell page
+    router.push(`/sell?product=${productId}`)
   }
 
   return (
     <div className="section-padding bg-gradient-to-b from-primary-50 to-white">
       <div className="container-custom">
-        <h1 className="text-4xl sm:text-5xl font-bold text-primary-700 mb-12 text-center">
-          Choose an Option
+        <h1 className="text-4xl sm:text-5xl font-bold text-primary-700 mb-3 text-center">
+          Our Products
         </h1>
-        
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-          {/* Buy Supplies Card */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-            <div className="h-48 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
-              <Image
-                src="/images/Product image 1.jpg"
-                alt="Buy Supplies"
-                width={300}
-                height={200}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-8">
-              <h2 className="text-2xl font-bold text-primary-700 mb-4">Buy Supplies</h2>
-              <p className="text-gray-600 mb-6">
-                Browse and purchase diabetic supplies securely. Find the products you need at competitive prices.
-              </p>
-              <button 
-                onClick={() => setSelectedOption('buy')}
-                className="btn-primary inline-block w-full text-center"
-              >
-                Shop Now
-              </button>
-            </div>
-          </div>
+        <p className="text-lg text-gray-700 text-center mb-6">
+          Explore a wide range of products and many more! Just reach out with what you need and get it with ease.
+        </p>
 
-          {/* Sell Supplies Card */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-            <div className="h-48 bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center">
-              <Image
-                src="/images/Product image 2.jpg"
-                alt="Sell Supplies"
-                width={300}
-                height={200}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-8">
-              <h2 className="text-2xl font-bold text-primary-700 mb-4">Sell Supplies</h2>
-              <p className="text-gray-600 mb-6">
-                Sell your unused diabetic supplies. Get competitive prices, free shipping, and fast payment.
-              </p>
-              <button 
-                onClick={() => setSelectedOption('sell')}
-                className="btn-primary inline-block w-full text-center"
-              >
-                Sell Now
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Products List Section */}
-        <div className="max-w-6xl mx-auto mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-8 text-center">
-            Our Products
-          </h2>
-          <p className="text-lg text-gray-700 text-center mb-12">
-            Explore a wide range of products and many more! Just reach out with what you need and get it with ease.
-          </p>
-          
+        <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {products.map((product, index) => (
               <button

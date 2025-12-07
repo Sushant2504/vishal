@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section with Opening Lines - Reduced Height */}
-      <section className="relative min-h-[400px] md:min-h-[450px] flex items-center justify-center bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden">
+      <section className="relative min-h-[400px] md:min-h-[450px] flex items-center justify-center bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden -mb-4">
         <div className="absolute inset-0 bg-black/20"></div>
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -66,24 +66,32 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4 animate-fade-in-right">
               <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/images/Product image 1.jpg"
-                  alt="Happy businessman with money"
+                  src="/images/product_image_1.jpeg"
+                  alt="Happy customer"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/images/Product image 2.jpg"
+                  src="/images/product_image_2.jpeg"
                   alt="Satisfied customer"
                   fill
                   className="object-cover"
                 />
               </div>
-              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg col-span-2 hover:scale-105 transition-transform duration-300">
+              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/images/Product image 3.jpg"
-                  alt="Business success"
+                  src="/images/product_image_3.jpeg"
+                  alt="Team member"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                <Image
+                  src="/images/product_image_4.jpeg"
+                  alt="Team member"
                   fill
                   className="object-cover"
                 />
@@ -94,7 +102,7 @@ export default function Home() {
       </section>
 
       {/* Our Vision Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white -mt-4">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -120,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Dedicated Assistants Section */}
-      <section className="section-padding bg-primary-50">
+      <section className="section-padding bg-primary-50 -mt-4">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-6 fade-in-on-scroll">
@@ -142,7 +150,7 @@ export default function Home() {
       </section>
 
       {/* Our Mission Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white -mt-4">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-6 text-center fade-in-on-scroll">
@@ -173,7 +181,7 @@ export default function Home() {
       </section>
 
       {/* How We Help Section */}
-      <section className="section-padding bg-primary-50">
+      <section className="section-padding bg-primary-50 -mt-4">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">

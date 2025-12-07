@@ -3,7 +3,7 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Chatbot from '@/components/Chatbot'
+import ConditionalChatbot from '@/components/ConditionalChatbot'
 
 const poppins = Poppins({ 
   subsets: ['latin'],
@@ -30,7 +30,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <Chatbot />
+        <ConditionalChatbot />
       </body>
     </html>
   )
