@@ -44,7 +44,7 @@ export default function Contact() {
             <div className="bg-white rounded-lg shadow-lg p-8">
               <div className="mb-6">
                 <Image
-                  src="/images/contact-image.jpg"
+                  src="/images/home-5.png"
                   alt="Contact Victorious Medical"
                   width={600}
                   height={400}

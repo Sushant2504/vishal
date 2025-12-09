@@ -30,21 +30,14 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero Section with Opening Lines - Reduced Height */}
-      <section className="relative min-h-[400px] md:min-h-[450px] flex items-center justify-center bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden -mb-4">
-        <div className="absolute inset-0 bg-black/20"></div>
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
-        </div>
-        <div className="relative z-10 container-custom px-4 sm:px-6 lg:px-8 py-12">
+      {/* Hero Section with People Images - Extracted from PDF */}
+      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden -mb-4">
+        <div className="container-custom px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="text-center md:text-left animate-fade-in-left">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                Secure & Simple Buyback for Your Extra Diabetic Supplies
-              </h1>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+                Turn Your Unused Supplies Into Cash
+              </h2>
               <div className="space-y-3 mb-6 text-base sm:text-lg">
                 <p className="flex items-center gap-3 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                   <span className="text-primary-200 text-xl">✓</span>
@@ -63,10 +56,19 @@ export default function Home() {
                 Sell Now
               </Link>
             </div>
+            {/* Success Stories Images */}
             <div className="grid grid-cols-2 gap-4 animate-fade-in-right">
               <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/images/product_image_1.jpeg"
+                  src="/images/home-3.png"
+                  alt="Successful seller"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                <Image
+                  src="/images/home-4.png"
                   alt="Happy customer"
                   fill
                   className="object-cover"
@@ -74,24 +76,16 @@ export default function Home() {
               </div>
               <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/images/product_image_2.jpeg"
-                  alt="Satisfied customer"
+                  src="/images/home-1.png"
+                  alt="Health management"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/images/product_image_3.jpeg"
-                  alt="Team member"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
-                <Image
-                  src="/images/product_image_4.jpeg"
-                  alt="Team member"
+                  src="/images/home-5.png"
+                  alt="Team celebration"
                   fill
                   className="object-cover"
                 />
@@ -187,8 +181,8 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg fade-in-on-scroll hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/images/about-image.jpg"
-                  alt="How We Help"
+                  src="/images/home-6.png"
+                  alt="Teamwork and Support"
                   fill
                   className="object-cover"
                 />
@@ -202,6 +196,28 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Team Section */}
+      <section className="section-padding bg-white -mt-4">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-6 text-center fade-in-on-scroll">
+              Our Professional Team
+            </h2>
+            <div className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto fade-in-on-scroll hover:scale-105 transition-transform duration-300">
+              <Image
+                src="/images/home-7.png"
+                alt="Our Professional Team"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <p className="text-lg text-gray-700 leading-relaxed mt-6 text-center fade-in-on-scroll">
+              Our dedicated team of professionals is committed to providing you with the best service and ensuring a smooth, secure transaction process.
+            </p>
           </div>
         </div>
       </section>

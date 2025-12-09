@@ -8,56 +8,58 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div className="section-padding">
-      <div className="container-custom">
-        {/* Meet Victorious Medical Section */}
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-bold text-primary-700 mb-4 text-center">
-            Meet Victorious Medical
-          </h1>
-          
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-4">
-            <div className="mb-6">
-              <Image
-                src="/images/about-image.jpg"
-                alt="About Victorious Medical"
-                width={800}
-                height={400}
-                className="w-full h-auto rounded-lg"
-              />
+    <div className="section-padding bg-gradient-to-b from-primary-50 to-white">
+      <div className="container-custom space-y-10">
+        {/* Hero Section */}
+        <div className="grid md:grid-cols-2 gap-8 items-center bg-white rounded-2xl shadow-xl p-8">
+          <div className="space-y-4">
+            <h1 className="text-4xl sm:text-5xl font-bold text-primary-700">
+              Meet Victorious Medical
+            </h1>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              We are a dedicated buyback partner for individuals managing diabetes. Our focus is simple: make selling unused diabetic supplies secure, fast, and stress-free, while helping the community reduce waste and recover value.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <span className="px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold">Trusted Buyback</span>
+              <span className="px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold">Fast Payments</span>
+              <span className="px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold">Free Shipping</span>
             </div>
-            
-            <div className="space-y-6 text-lg text-gray-700">
-                <p className="leading-relaxed">
-                At Victorious Medical, we are dedicated to offering a trusted buyback service exclusively for individuals managing diabetes. Our mission is to provide a straightforward and stress-free solution for those wishing to sell their unused diabetic supplies. By focusing solely on buybacks, we deliver a smooth process that emphasizes reliability, transparency, and care. We proudly support the diabetes community by helping patients reclaim value from surplus items while encouraging responsible and sustainable health care practices.
-              </p>
-            </div>
-            
-            <div className="mt-8 text-center">
-              <Link href="/products" className="btn-primary text-lg inline-block">
-                Explore Our Services
+            <div className="pt-2">
+              <Link href="/products/sell" className="btn-primary text-lg inline-block">
+                Sell Now
               </Link>
             </div>
           </div>
-        </div>
-
-        {/* Team Image Section */}
-        <div className="max-w-4xl mx-auto mb-4">
-          <div className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
+          <div className="relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/images/contact-image.jpg"
+              src="/images/home-7.png"
               alt="Victorious Medical Team"
               fill
               className="object-cover"
+              priority
             />
           </div>
         </div>
 
-        {/* Personalized Support Section */}
-        <div className="max-w-4xl mx-auto mb-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary-700 mb-4 text-center">
-            Personalized support designed for you
-          </h2>
+        {/* Story & Mission */}
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/home-6.png"
+              alt="Teamwork and Collaboration"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="bg-white rounded-2xl shadow-lg p-8 space-y-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary-700">Our Commitment</h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              From your first inquiry to final payment, we prioritize reliability, transparency, and care. By focusing solely on buybacks, we streamline every step so you can sell with confidence and get paid quickly.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              We cover prepaid, trackable shipping and provide clear guidance to keep the process smooth. Your trust matters to us, and we’re here with responsive support at every step.
+            </p>
+          </div>
         </div>
 
         {/* Why Choose Victorious Medical Section */}

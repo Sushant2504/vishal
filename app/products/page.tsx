@@ -2,19 +2,19 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
-const products = [
-  { id: 1, name: 'FreeStyle 50ct Retail', code: 'NDC 99073-0120-50' },
-  { id: 2, name: 'Accu-Chek Aviva Plus 50ct Retail', code: 'NDC 65702-0407-10' },
-  { id: 3, name: 'Contour Next 100ct Retail', code: 'NDC 0193-7312-21' },
-  { id: 4, name: 'Dexcom G7 Sensor', code: 'STP-AT-012' },
-  { id: 5, name: 'Dexcom G6 Sensor 3 Pack', code: 'REF STS-OE-003' },
-  { id: 6, name: 'Dexcom G6 Transmitter Kit', code: 'NDC 08627-0016-01 (REF STT-OE-001)' },
-  { id: 7, name: 'Omnipod 5 (Purple Box)', code: 'NDC 08508-3000-21' },
-  { id: 8, name: 'Freestyle Libre 3 Plus', code: '' },
-  { id: 9, name: 'Minimed Mio Advance', code: 'MMT-242' },
+// Eight products (repeat core catalog to fill grid)
+const mainProducts = [
+  { id: 1, name: 'Dexcom G7 Sensor', code: 'STP-AT-012', image: '/images/product_image_1.jpeg' },
+  { id: 2, name: 'Omnipod 5 Pods', code: 'NDC 08508-3000-21', image: '/images/product_image_2.jpeg' },
+  { id: 3, name: 'FreeStyle Libre 3 Plus', code: '', image: '/images/product_image_3.jpeg' },
+  { id: 4, name: 'Dexcom G7 Sensor Pack', code: 'STP-AT-012', image: '/images/product_image_4.jpeg' },
+  { id: 5, name: 'Dexcom G7 Sensor', code: 'STP-AT-012', image: '/images/product_image_1.jpeg' },
+  { id: 6, name: 'Omnipod 5 Pods', code: 'NDC 08508-3000-21', image: '/images/product_image_2.jpeg' },
+  { id: 7, name: 'FreeStyle Libre 3 Plus', code: '', image: '/images/product_image_3.jpeg' },
+  { id: 8, name: 'Dexcom G7 Sensor Pack', code: 'STP-AT-012', image: '/images/product_image_4.jpeg' },
 ]
 
 export default function Products() {
@@ -41,13 +41,11 @@ export default function Products() {
     }
   }, [])
 
-  const handleProductClick = (productId: number, productName: string) => {
+  const handleSellNow = (productId: number, productName: string) => {
     // Store selected product in sessionStorage
     sessionStorage.setItem('selectedProduct', JSON.stringify({ id: productId, name: productName }))
-    sessionStorage.setItem('showShipping', 'true')
-    
-    // Redirect to sell page
-    router.push(`/sell?product=${productId}`)
+    // Redirect to shipping form page
+    router.push('/products/sell')
   }
 
   return (
@@ -60,33 +58,39 @@ export default function Products() {
           Explore a wide range of products and many more! Just reach out with what you need and get it with ease.
         </p>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {products.map((product, index) => (
-              <button
+
+        <div className="max-w-6xl mx-auto mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {mainProducts.map((product, index) => (
+              <div
                 key={product.id}
-                onClick={() => handleProductClick(product.id, product.name)}
-                className="bg-white rounded-full p-6 shadow-lg hover:shadow-xl transition-all duration-300 aspect-square flex flex-col items-center justify-center text-center fade-in-on-scroll hover:scale-110 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                className="bg-white rounded-xl shadow-lg overflow-hidden fade-in-on-scroll hover:shadow-xl transition-all duration-300"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="bg-primary-100 rounded-full w-20 h-20 flex items-center justify-center mb-4">
+                <div className="relative h-48 md:h-64 bg-gray-100">
                   <Image
-                    src="/images/Product image 1.jpg"
+                    src={product.image}
                     alt={product.name}
-                    width={60}
-                    height={60}
-                    className="rounded-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
-                <h3 className="font-bold text-primary-700 mb-2 text-sm">{product.name}</h3>
-                {product.code && (
-                  <p className="text-xs text-gray-600">{product.code}</p>
-                )}
-              </button>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-primary-700 mb-2">{product.name}</h3>
+                  {product.code && (
+                    <p className="text-sm text-gray-600 mb-4">{product.code}</p>
+                  )}
+                  <button
+                    onClick={() => handleSellNow(product.id, product.name)}
+                    className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+                  >
+                    Sell Now
+                  </button>
+                </div>
+              </div>
             ))}
           </div>
         </div>
-
       </div>
     </div>
   )

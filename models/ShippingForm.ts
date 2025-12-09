@@ -35,7 +35,7 @@ const ShippingFormSchema: Schema = new Schema(
     preferredPaymentMethod: {
       type: String,
       required: true,
-      enum: ['Venmo', 'Check', 'Zelle', 'CashApp', 'PayPal'],
+      enum: ['Paytm', 'UPI', 'Net Banking', 'Card', 'Cash'],
     },
     paymentDetails: {
       type: String,
