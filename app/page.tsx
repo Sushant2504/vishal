@@ -60,32 +60,32 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4 animate-fade-in-right">
               <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/images/home-3.png"
-                  alt="Successful seller"
+                  src="/images/into-cash.png"
+                  alt="Exchange supplies into cash"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/images/home-4.png"
-                  alt="Happy customer"
+                  src="/images/suplements.png"
+                  alt="Extra supplies buyback"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/images/home-1.png"
-                  alt="Health management"
+                  src="/images/suplements.png"
+                  alt="Extra supplies buyback"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/images/home-5.png"
-                  alt="Team celebration"
+                  src="/images/into-cash.png"
+                  alt="Exchange supplies into cash"
                   fill
                   className="object-cover"
                 />
