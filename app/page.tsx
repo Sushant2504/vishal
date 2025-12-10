@@ -32,8 +32,8 @@ export default function Home() {
     <div>
       {/* Hero Section with People Images - Extracted from PDF */}
       <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden -mb-4">
-        <div className="container-custom px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="container-custom px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center md:text-left animate-fade-in-left">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                 Turn Your Unused Supplies Into Cash
@@ -57,37 +57,41 @@ export default function Home() {
               </Link>
             </div>
             {/* Success Stories Images */}
-            <div className="grid grid-cols-2 gap-4 animate-fade-in-right">
-              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+            <div className="grid grid-cols-2 gap-3 md:gap-4 lg:gap-5 animate-fade-in-right">
+              <div className="relative h-40 md:h-48 lg:h-56 rounded-xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/20 hover:border-white/40">
                 <Image
                   src="/images/into-cash.png"
                   alt="Exchange supplies into cash"
                   fill
                   className="object-cover"
+                  priority
                 />
               </div>
-              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+              <div className="relative h-40 md:h-48 lg:h-56 rounded-xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/20 hover:border-white/40">
                 <Image
                   src="/images/suplements.png"
                   alt="Extra supplies buyback"
                   fill
                   className="object-cover"
+                  priority
                 />
               </div>
-              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+              <div className="relative h-40 md:h-48 lg:h-56 rounded-xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/20 hover:border-white/40">
                 <Image
-                  src="/images/suplements.png"
-                  alt="Extra supplies buyback"
+                  src="/images/banner-1.jpeg"
+                  alt="Victorious Medical Banner"
                   fill
                   className="object-cover"
+                  priority
                 />
               </div>
-              <div className="relative h-32 md:h-40 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+              <div className="relative h-40 md:h-48 lg:h-56 rounded-xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/20 hover:border-white/40">
                 <Image
-                  src="/images/into-cash.png"
-                  alt="Exchange supplies into cash"
+                  src="/images/banner-2.jpeg"
+                  alt="Victorious Medical Banner"
                   fill
                   className="object-cover"
+                  priority
                 />
               </div>
             </div>

@@ -5,16 +5,14 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
-// Eight products (repeat core catalog to fill grid)
+// Six unique products
 const mainProducts = [
   { id: 1, name: 'Dexcom G7 Sensor', code: 'STP-AT-012', image: '/images/dexcom-g7.png' },
   { id: 2, name: 'Omnipod 5 Pods', code: 'NDC 08508-3000-21', image: '/images/product_image_2.jpeg' },
   { id: 3, name: 'FreeStyle Libre 3 Plus', code: '', image: '/images/product_image_3.jpeg' },
-  { id: 4, name: 'Dexcom G7 Sensor Pack', code: 'STP-AT-012', image: '/images/dexcom-g7.png' },
-  { id: 5, name: 'Dexcom G7 Sensor', code: 'STP-AT-012', image: '/images/product_image_1.jpeg' },
-  { id: 6, name: 'Omnipod 5 Pods', code: 'NDC 08508-3000-21', image: '/images/product_image_2.jpeg' },
-  { id: 7, name: 'FreeStyle Libre 3 Plus', code: '', image: '/images/product_image_3.jpeg' },
-  { id: 8, name: 'Dexcom G7 Sensor Pack', code: 'STP-AT-012', image: '/images/dexcom-g7.png' },
+  { id: 4, name: 'Dexcom G6', code: 'STP-AT-012', image: '/images/product-5.png' },
+  { id: 5, name: 'Omnipod Dash Pods', code: 'NDC 08508-3000-21', image: '/images/product-6.png' },
+  { id: 6, name: 'Dexcom G7 Sensor Pack', code: 'STP-AT-012', image: '/images/dexcom-g7.png' },
 ]
 
 export default function Products() {
