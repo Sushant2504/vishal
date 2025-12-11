@@ -75,9 +75,6 @@ export default function Products() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-primary-700 mb-2">{product.name}</h3>
-                  {product.code && (
-                    <p className="text-sm text-gray-600 mb-4">{product.code}</p>
-                  )}
                   <button
                     onClick={() => handleSellNow(product.id, product.name)}
                     className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
