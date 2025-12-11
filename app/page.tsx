@@ -58,7 +58,7 @@ export default function Home() {
             </div>
             {/* Success Stories Images */}
             <div className="grid grid-cols-2 gap-3 md:gap-4 lg:gap-5 animate-fade-in-right">
-              <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/5">
+              <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/10">
                 <Image
                   src="/images/exchange.png"
                   alt="Exchange your extra diabetic supplies into cash"
@@ -67,7 +67,7 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/5">
+              <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/10">
                 <Image
                   src="/images/suplements.png"
                   alt="Extra supplies buyback"
@@ -76,7 +76,7 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/5">
+              <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/10">
                 <Image
                   src="/images/banner-1.jpeg"
                   alt="Victorious Medical Banner"
@@ -85,10 +85,10 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/5">
+              <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/10">
                 <Image
-                  src="/images/banner-2.jpeg"
-                  alt="Victorious Medical Banner"
+                  src="/images/exchange.png"
+                  alt="Exchange your diabetic supplies for cash"
                   fill
                   className="object-cover"
                   priority
