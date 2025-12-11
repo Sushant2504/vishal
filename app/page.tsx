@@ -58,16 +58,16 @@ export default function Home() {
             </div>
             {/* Success Stories Images */}
             <div className="grid grid-cols-2 gap-3 md:gap-4 lg:gap-5 animate-fade-in-right">
-              <div className="relative h-40 md:h-48 lg:h-56 rounded-xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/20 hover:border-white/40">
+              <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/5">
                 <Image
-                  src="/images/into-cash.png"
-                  alt="Exchange supplies into cash"
+                  src="/images/exchange.png"
+                  alt="Exchange your extra diabetic supplies into cash"
                   fill
                   className="object-cover"
                   priority
                 />
               </div>
-              <div className="relative h-40 md:h-48 lg:h-56 rounded-xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/20 hover:border-white/40">
+              <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/5">
                 <Image
                   src="/images/suplements.png"
                   alt="Extra supplies buyback"
@@ -76,7 +76,7 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="relative h-40 md:h-48 lg:h-56 rounded-xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/20 hover:border-white/40">
+              <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/5">
                 <Image
                   src="/images/banner-1.jpeg"
                   alt="Victorious Medical Banner"
@@ -85,7 +85,7 @@ export default function Home() {
                   priority
                 />
               </div>
-              <div className="relative h-40 md:h-48 lg:h-56 rounded-xl overflow-hidden shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-white/20 hover:border-white/40">
+              <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/5">
                 <Image
                   src="/images/banner-2.jpeg"
                   alt="Victorious Medical Banner"
