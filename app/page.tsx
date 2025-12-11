@@ -60,8 +60,8 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-3 md:gap-4 lg:gap-5 animate-fade-in-right">
               <div className="relative aspect-[4/3] md:aspect-[5/4] max-h-60 md:max-h-64 lg:max-h-72 rounded-2xl overflow-hidden shadow-2xl hover:scale-105 hover:-translate-y-1 transition-all duration-300 border-2 border-white/25 hover:border-white/50 bg-white/10">
                 <Image
-                  src="/images/exchange.png"
-                  alt="Exchange your extra diabetic supplies into cash"
+                  src="/images/exchange-hero-alt.jpg"
+                  alt="Exchange your diabetic supplies into cash"
                   fill
                   className="object-cover"
                   priority
