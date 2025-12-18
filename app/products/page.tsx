@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
-// Six unique products
+// Eight unique products
 const mainProducts = [
   { id: 1, name: 'Dexcom G7 Sensor', code: 'STP-AT-012', image: '/images/dexcom-g7.png' },
   { id: 2, name: 'Omnipod 5 Pods', code: 'NDC 08508-3000-21', image: '/images/product_image_2.jpeg' },
@@ -13,6 +13,8 @@ const mainProducts = [
   { id: 4, name: 'Dexcom G6', code: 'STP-AT-012', image: '/images/product-5.png' },
   { id: 5, name: 'Omnipod Dash Pods', code: 'NDC 08508-3000-21', image: '/images/product-6.png' },
   { id: 6, name: 'Dexcom G7 Sensor Pack', code: 'STP-AT-012', image: '/images/dexcom-g7.png' },
+  { id: 7, name: 'Accu-Chek Guide Test Strips (100ct)', code: '', image: '/images/product-7.png' },
+  { id: 8, name: 'FreeStyle Lite Test Strips', code: '', image: '/images/product-8.png' },
 ]
 
 export default function Products() {
