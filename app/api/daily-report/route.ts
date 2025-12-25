@@ -147,9 +147,10 @@ async function sendEmailReport(params: {
   html: string
   subject: string
   to: string[]
+  from?: string
   errors: string[]
 }) {
-  const { html, subject, to, errors } = params
+  const { html, subject, to, from, errors } = params
 
   // Firebase Trigger Email path: writes to Firestore "mail" collection
   if (to.length === 0) {
@@ -164,6 +165,7 @@ async function sendEmailReport(params: {
         subject,
         html,
       },
+      ...(from ? { from } : {}),
     })
     return true
   } catch (err: any) {
