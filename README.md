@@ -117,6 +117,11 @@ Create a `.env.local` file for environment-specific variables:
 ```env
 # Site URL (update in app/sitemap.ts and app/robots.ts as well)
 NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+# Firebase Admin (server-side)
+FIREBASE_PROJECT_ID=your-project-id
+FIREBASE_CLIENT_EMAIL=service-account@your-project-id.iam.gserviceaccount.com
+# Use escaped newlines: replace actual newlines with \n
+FIREBASE_PRIVATE_KEY=-----BEGIN PRIVATE KEY-----\\nMIIE...\\n-----END PRIVATE KEY-----\\n
 ```
 
 **Important**: Update the domain in `app/sitemap.ts` and `app/robots.ts` before deploying to production.

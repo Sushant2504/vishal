@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server'
-import connectDB from '@/lib/mongodb'
+import { getDb } from '@/lib/firebase'
 
 export async function GET() {
   try {
-    await connectDB()
+    await getDb().listCollections()
     return NextResponse.json({ 
       status: 'connected', 
-      message: 'Database connection successful',
+      message: 'Firestore connection successful',
       timestamp: new Date().toISOString()
     }, { status: 200 })
   } catch (error: any) {

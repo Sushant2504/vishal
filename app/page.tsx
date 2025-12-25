@@ -6,6 +6,14 @@ import { useEffect, useRef } from 'react'
 
 export default function Home() {
   const observerRef = useRef<IntersectionObserver | null>(null)
+  const paymentStrip = [
+    { src: '/images/photo-1.jpeg', label: 'Cash App • $300 sent' },
+    { src: '/images/photo-2.jpeg', label: 'PayPal • $405 sent' },
+    { src: '/images/photo-3.jpeg', label: 'PayPal • $1,670 sent' },
+    { src: '/images/photo-4.jpeg', label: 'Cash App • $3,450 sent' },
+    { src: '/images/photo-6.jpeg', label: 'PayPal • $525 sent' },
+    { src: '/images/photo-7.jpeg', label: 'PayPal • confirmed payout' },
+  ]
 
   useEffect(() => {
     // Intersection Observer for scroll animations
@@ -30,6 +38,99 @@ export default function Home() {
 
   return (
     <div>
+      {/* Payment Proof Strip (top) */}
+      <section className="bg-white/90 backdrop-blur border-b border-primary-100">
+        <div className="relative overflow-hidden container-custom py-8">
+          <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
+          <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
+          <div className="flex gap-8 animate-strip items-center min-h-[320px]">
+            {[...paymentStrip, ...paymentStrip].map((item, idx) => (
+              <div
+                key={`${item.src}-${idx}`}
+                className="flex flex-col items-center gap-4 px-7 py-7 bg-white shadow-md border border-primary-100 rounded-2xl min-w-[300px]"
+              >
+                <div className="relative h-40 w-40 overflow-hidden rounded-2xl border border-primary-100 bg-white">
+                  <Image src={item.src} alt={item.label} fill className="object-cover" sizes="180px" />
+                </div>
+                <div className="text-lg font-semibold text-primary-800 text-center whitespace-nowrap">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <style jsx>{`
+          @keyframes strip-scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          .animate-strip {
+            width: max-content;
+            animation: strip-scroll 20s linear infinite;
+            padding: 6px 0;
+          }
+        `}</style>
+      </section>
+
+      {/* Payment Confidence Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="space-y-4 fade-in-on-scroll">
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">Join our happy clients and get paid through</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-primary-800">Seamless Payments. Faster Care.</h2>
+              <p className="text-lg text-gray-700">
+                At Victorious Medical Bupack, we make payments simple and secure so your supplies move without delay.
+                Choose the method that fits your lifestyle and let us handle the rest.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {['CashApp', 'Venmo', 'Zelle', 'PayPal', 'Cash', 'Wire / Certified Cheque'].map((method) => (
+                  <div
+                    key={method}
+                    className="flex items-center gap-2 rounded-lg border border-primary-100 bg-primary-50 px-3 py-2 text-primary-800 text-sm font-medium shadow-sm"
+                  >
+                    <span className="text-primary-600">✓</span>
+                    <span>{method}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="space-y-2">
+                <p className="text-gray-700">
+                  Reliable processing for digital wallets and traditional payments, with bank-grade security for high-volume accounts.
+                </p>
+                <p className="text-gray-700">
+                  Flexible terms for facilities and individuals, handled with privacy and transparency by our finance team.
+                </p>
+              </div>
+            </div>
+            <div className="fade-in-on-scroll">
+              <div className="rounded-2xl border border-primary-100 bg-primary-50 p-6 shadow-lg">
+                <h3 className="text-xl font-semibold text-primary-800 mb-2">Payment Confirmation</h3>
+                <p className="text-gray-700 mb-4">
+                  Every payout is confirmed and tracked. You&apos;ll know the moment funds are sent—no guesswork.
+                </p>
+                <div className="grid gap-3 text-sm text-gray-800">
+                  <div className="rounded-lg bg-white p-3 border border-primary-100 shadow-sm">
+                    <div className="font-semibold text-primary-700">Mobile Apps</div>
+                    <div>CashApp • Venmo • Zelle</div>
+                  </div>
+                  <div className="rounded-lg bg-white p-3 border border-primary-100 shadow-sm">
+                    <div className="font-semibold text-primary-700">Digital Wallets</div>
+                    <div>PayPal for secure, encrypted checkout</div>
+                  </div>
+                  <div className="rounded-lg bg-white p-3 border border-primary-100 shadow-sm">
+                    <div className="font-semibold text-primary-700">Traditional Options</div>
+                    <div>Cash • Certified Cheques • Bank wires for bulk/wholesale</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section with People Images - Extracted from PDF */}
       <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden -mb-4">
         <div className="container-custom px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">

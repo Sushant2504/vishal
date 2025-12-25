@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import connectDB from '@/lib/mongodb'
-import ShippingForm from '@/models/ShippingForm'
+import { fetchShippingForms, saveShippingForm } from '@/models/ShippingForm'
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,33 +14,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Connect to database
-    try {
-      await connectDB()
-    } catch (dbError: any) {
-      console.error('Database connection error:', dbError)
-      
-      // Provide more specific error messages
-      let errorDetails = dbError.message || 'Unable to connect to database. Please try again later.'
-      
-      // Check for specific MongoDB errors
-      if (dbError.name === 'MongooseServerSelectionError' || dbError.message?.includes('IP') || dbError.message?.includes('whitelist')) {
-        errorDetails = 'Database connection failed: IP address may not be whitelisted. Please contact the administrator.'
-      } else if (dbError.message?.includes('timeout')) {
-        errorDetails = 'Database connection timeout. Please try again in a moment.'
-      } else if (dbError.message?.includes('authentication')) {
-        errorDetails = 'Database authentication failed. Please contact support.'
-      }
-      
-      return NextResponse.json(
-        { 
-          error: 'Database connection failed', 
-          details: errorDetails,
-          retry: true
-        },
-        { status: 503 } // Service Unavailable
-      )
-    }
     const {
       name,
       address,
@@ -90,7 +62,7 @@ export async function POST(request: NextRequest) {
 
     // Create new shipping form entry
     try {
-      const shippingForm = new ShippingForm({
+      const id = await saveShippingForm({
         name,
         address,
         contactNumber,
@@ -102,8 +74,7 @@ export async function POST(request: NextRequest) {
         damageNotes: damageNotes || '',
       })
 
-      await shippingForm.save()
-      console.log('✅ Shipping form saved successfully:', shippingForm._id)
+      console.log('✅ Shipping form saved successfully:', id)
 
       // Prepare email data for owner notification
       const emailBody = `
@@ -123,7 +94,7 @@ ${damageNotes ? `Damage Notes: ${damageNotes}` : ''}
       return NextResponse.json(
         {
           message: 'Shipping form submitted successfully',
-          id: shippingForm._id,
+          id,
           emailData: {
             to: 'victoriousmedicalbuyback1@gmail.com',
             subject: `New Shipping Form Submission - ${name}`,
@@ -156,8 +127,7 @@ ${damageNotes ? `Damage Notes: ${damageNotes}` : ''}
 
 export async function GET() {
   try {
-    await connectDB()
-    const forms = await ShippingForm.find().sort({ createdAt: -1 }).limit(100)
+    const forms = await fetchShippingForms()
     return NextResponse.json({ forms }, { status: 200 })
   } catch (error: any) {
     console.error('Error fetching shipping forms:', error)

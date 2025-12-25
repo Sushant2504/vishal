@@ -1,6 +1,6 @@
-import mongoose, { Schema, Document, Model } from 'mongoose'
+import { FieldValue, Timestamp, getDb } from '@/lib/firebase'
 
-export interface IShippingForm extends Document {
+export type ShippingFormInput = {
   name: string
   address: string
   contactNumber: string
@@ -10,56 +10,41 @@ export interface IShippingForm extends Document {
   expectedShippingDay: string
   boxesMintCondition: string
   damageNotes?: string
-  createdAt: Date
-  updatedAt: Date
 }
 
-const ShippingFormSchema: Schema = new Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-    },
-    address: {
-      type: String,
-      required: true,
-    },
-    contactNumber: {
-      type: String,
-      required: true,
-    },
-    emailAddress: {
-      type: String,
-      required: true,
-    },
-    preferredPaymentMethod: {
-      type: String,
-      required: true,
-      enum: ['Paytm', 'UPI', 'Net Banking', 'Card', 'Cash'],
-    },
-    paymentDetails: {
-      type: String,
-      required: true,
-    },
-    expectedShippingDay: {
-      type: String,
-      required: true,
-    },
-    boxesMintCondition: {
-      type: String,
-      required: true,
-      enum: ['Yes', 'No'],
-    },
-    damageNotes: {
-      type: String,
-    },
-  },
-  {
-    timestamps: true,
-  }
-)
+export type ShippingFormRecord = ShippingFormInput & {
+  createdAt?: Timestamp | null
+  updatedAt?: Timestamp | null
+}
 
-const ShippingForm: Model<IShippingForm> = mongoose.models.ShippingForm || mongoose.model<IShippingForm>('ShippingForm', ShippingFormSchema)
+const COLLECTION = 'shippingForms'
 
-export default ShippingForm
+export async function saveShippingForm(data: ShippingFormInput) {
+  const db = getDb()
+  const now = FieldValue.serverTimestamp()
+
+  const docRef = await db.collection(COLLECTION).add({
+    ...data,
+    damageNotes: data.damageNotes || '',
+    createdAt: now,
+    updatedAt: now,
+  })
+
+  return docRef.id
+}
+
+export async function fetchShippingForms(limit = 100) {
+  const db = getDb()
+  const snapshot = await db.collection(COLLECTION).orderBy('createdAt', 'desc').limit(limit).get()
+
+  return snapshot.docs.map((doc) => {
+    const data = doc.data() as ShippingFormRecord
+    return {
+      id: doc.id,
+      ...data,
+      createdAt: data.createdAt instanceof Timestamp ? data.createdAt.toDate().toISOString() : null,
+      updatedAt: data.updatedAt instanceof Timestamp ? data.updatedAt.toDate().toISOString() : null,
+    }
+  })
+}
 

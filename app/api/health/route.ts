@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server'
-import connectDB from '@/lib/mongodb'
-import SellForm from '@/models/SellForm'
-import ShippingForm from '@/models/ShippingForm'
+import { getDb } from '@/lib/firebase'
 
 export async function GET() {
   const healthCheck = {
@@ -18,14 +16,15 @@ export async function GET() {
   }
 
   try {
-    // Test database connection
-    await connectDB()
+    const db = getDb()
+    // Test database connection by listing collections
+    await db.listCollections()
     healthCheck.database.connected = true
     healthCheck.database.error = null
 
     // Test model access
     try {
-      const sellFormCount = await SellForm.countDocuments()
+      const sellFormCount = await db.collection('sellForms').limit(1).get()
       healthCheck.models.SellForm = true
     } catch (error: any) {
       healthCheck.models.SellForm = false
@@ -33,7 +32,7 @@ export async function GET() {
     }
 
     try {
-      const shippingFormCount = await ShippingForm.countDocuments()
+      const shippingFormCount = await db.collection('shippingForms').limit(1).get()
       healthCheck.models.ShippingForm = true
     } catch (error: any) {
       healthCheck.models.ShippingForm = false
