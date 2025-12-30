@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate payment method
-    const validPaymentMethods = ['Paytm', 'UPI', 'Net Banking', 'Card', 'Cash']
+    const validPaymentMethods = ['Venmo', 'Check', 'Zelle', 'CashApp', 'PayPal']
     if (!validPaymentMethods.includes(preferredPaymentMethod)) {
       return NextResponse.json(
         { error: 'Invalid payment method' },

@@ -240,22 +240,32 @@ export default function ShippingForm({ onFormSubmit }: ShippingFormProps) {
               <label htmlFor="preferredPaymentMethod" className="block text-sm font-semibold text-gray-800 mb-2">
                 Preferred Payment Method *
               </label>
-              <input
-                type="text"
+              <select
                 id="preferredPaymentMethod"
                 name="preferredPaymentMethod"
                 required
                 value={formData.preferredPaymentMethod}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-white shadow-sm"
-                placeholder="Enter your preferred payment method"
-              />
+              >
+                <option value="" disabled>
+                  Select an option
+                </option>
+                <option value="Venmo">Venmo</option>
+                <option value="Check">Check</option>
+                <option value="Zelle">Zelle</option>
+                <option value="CashApp">CashApp</option>
+                <option value="PayPal">PayPal</option>
+              </select>
+              <p className="text-sm text-gray-500 mt-2">
+                Available options: Venmo, Check, Zelle, CashApp, PayPal.
+              </p>
             </div>
 
             {/* Payment Details */}
             <div>
               <label htmlFor="paymentDetails" className="block text-sm font-semibold text-gray-800 mb-2">
-                Payment Details (Paytm / UPI ID / Account) *
+                Payment Details (Zelle or CashApp Number) *
               </label>
               <input
                 type="text"
@@ -265,10 +275,11 @@ export default function ShippingForm({ onFormSubmit }: ShippingFormProps) {
                 value={formData.paymentDetails}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-white shadow-sm"
-                placeholder="Enter UPI ID, Paytm number, or bank details"
+                placeholder="Enter Zelle email/phone, CashApp $Cashtag, or Venmo/PayPal ID"
               />
               <p className="text-sm text-gray-500 mt-2">
-                For Paytm/UPI, share your UPI ID or registered number. For Net Banking, add account/IFSC details.
+                For Zelle, share the email/phone linked to your account. For CashApp, share your $Cashtag.
+                Venmo/PayPal users can share their username or email. If requesting a check, include the payee name and mailing address.
               </p>
             </div>
           </div>
