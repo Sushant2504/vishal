@@ -275,7 +275,7 @@ export default function ShippingForm({ onFormSubmit }: ShippingFormProps) {
                 value={formData.paymentDetails}
                 onChange={handleChange}
                 className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all bg-white shadow-sm"
-                placeholder="Enter Zelle email/phone, CashApp $Cashtag, or Venmo/PayPal ID"
+                placeholder="enter the payment details"
               />
               <p className="text-sm text-gray-500 mt-2">
                 For Zelle, share the email/phone linked to your account. For CashApp, share your $Cashtag.
